@@ -4,6 +4,9 @@
     "version": "0.0.0",
     "scripts": {
         "lerna:reinstall": "lerna clean --yes && lerna bootstrap",
+        "dev:docker": "docker-compose up",
+        "dev:frontend": "yarn frontend dev",
+        "dev:backend": "yarn backend start:dev",
         "format:check": "prettier --check .",
         "format:write": "prettier --write .",
         "dependencies:check": "run-s update:check:*",
