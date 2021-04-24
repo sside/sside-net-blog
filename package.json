@@ -20,6 +20,11 @@
     "pretty-quick": "^3.1.0"
   },
   "homepage": "https://github.com/sside/sside-net-blog",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "keywords": [
     "GraphQL",
     "Nest.js",
