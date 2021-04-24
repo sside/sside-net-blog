@@ -4,6 +4,8 @@
     "version": "0.0.0",
     "scripts": {
         "lerna:reinstall": "lerna clean --yes && lerna bootstrap",
+        "format:check": "prettier --check .",
+        "format:write": "prettier --write .",
         "dependencies:check": "run-s update:check:*",
         "dependencies:check:frontend": "cd app/frontend && ncu",
         "dependencies:update": "run-s dependencies:update:* && yarn install",
