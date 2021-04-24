@@ -8,10 +8,14 @@
         "format:write": "prettier --write .",
         "dependencies:check": "run-s update:check:*",
         "dependencies:check:frontend": "cd app/frontend && ncu",
+        "dependencies:check:backend": "cd app/backend && ncu",
         "dependencies:update": "run-s dependencies:update:* && yarn install",
         "dependencies:update:frontend": "cd app/frontend && ncu -u",
+        "dependencies:update:backend": "cd app/backend && ncu -u",
         "frontend": "cd app/frontend && yarn",
-        "postinstall": "lerna bootstrap"
+        "backend": "cd app/backend && yarn",
+        "postinstall": "lerna bootstrap",
+        "prepare": "husky install"
     },
     "dependencies": {
         "npm-run-all": "^4.1.5"
@@ -37,6 +41,13 @@
     "bugs": {
         "url": "https://github.com/sside/sside-net-blog/issues"
     },
-    "keywords": ["GraphQL", "Nest.js", "Nuxt.js", "TypeScript", "Vue.js", "blog"],
+    "keywords": [
+        "GraphQL",
+        "Nest.js",
+        "Nuxt.js",
+        "TypeScript",
+        "Vue.js",
+        "blog"
+    ],
     "license": "MIT"
 }
