@@ -9,6 +9,8 @@
         "dev:backend": "yarn backend start:dev",
         "format:check": "prettier --check .",
         "format:write": "prettier --write .",
+        "lerna:frontend": "lerna --scope @sside-net-blog/frontend ",
+        "lerna:backend": "lerna --scope @sside-net-blog/backend ",
         "dependencies:check": "run-s update:check:*",
         "dependencies:check:root": "ncu",
         "dependencies:check:frontend": "cd app/frontend && ncu",
