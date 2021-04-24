@@ -36,13 +36,6 @@
     "bugs": {
         "url": "https://github.com/sside/sside-net-blog/issues"
     },
-    "keywords": [
-        "GraphQL",
-        "Nest.js",
-        "Nuxt.js",
-        "TypeScript",
-        "Vue.js",
-        "blog"
-    ],
+    "keywords": ["GraphQL", "Nest.js", "Nuxt.js", "TypeScript", "Vue.js", "blog"],
     "license": "MIT"
 }
