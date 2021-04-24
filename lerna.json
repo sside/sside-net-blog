@@ -1,10 +1,10 @@
 {
-  "packages": ["app/*", "library/*", "resource"],
-  "version": "0.0.0",
-  "npmClient": "yarn",
-  "command": {
-    "run": {
-      "npmClient": "yarn"
+    "packages": ["app/*", "library/*", "resource"],
+    "version": "0.0.0",
+    "npmClient": "yarn",
+    "command": {
+        "run": {
+            "npmClient": "yarn"
+        }
     }
-  }
 }
