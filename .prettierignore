@@ -1,0 +1,16 @@
+# JetBrains
+.idea
+
+# Documents
+**/coverage
+
+# Node
+node_modules
+**/package-lock.json
+**/yarn.lock
+
+# built codes
+**/dist
+
+# Nuxt.js
+**/.nuxt
