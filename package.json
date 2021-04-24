@@ -29,11 +29,6 @@
         "prettier": "^2.2.1",
         "pretty-quick": "^3.1.0"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "pretty-quick --staged"
-        }
-    },
     "main": "index.js",
     "author": "sside <sside@live.jp>",
     "homepage": "https://github.com/sside/sside-net-blog",
