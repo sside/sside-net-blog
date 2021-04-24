@@ -25,8 +25,19 @@
             "pre-commit": "pretty-quick --staged"
         }
     },
-    "keywords": ["GraphQL", "Nest.js", "Nuxt.js", "TypeScript", "Vue.js", "blog"],
+    "keywords": [
+        "GraphQL",
+        "Nest.js",
+        "Nuxt.js",
+        "TypeScript",
+        "Vue.js",
+        "blog"
+    ],
     "license": "MIT",
     "main": "index.js",
-    "repository": "https://github.com/sside/sside-net-blog.git"
+    "repository": "https://github.com/sside/sside-net-blog.git",
+    "scripts": {
+        "postinstall": "lerna bootstrap",
+        "lerna:reinstall": "lerna clean --yes && lerna bootstrap"
+    }
 }
