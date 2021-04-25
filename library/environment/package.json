@@ -3,7 +3,7 @@
     "scripts": {
         "clean": "rimraf dist",
         "build": "yarn clean && tsc --build",
-        "watch": "yarn clean && tsc --watch",
+        "watch": "tsc --watch",
         "test": "jest"
     },
     "dependencies": {
