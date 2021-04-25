@@ -47,10 +47,10 @@ class Environment {
                 debug: true,
             });
         }
-        this.variables = {
+        this.variables = Object.freeze({
             frontend: this.getEnvironmentVariable(new FrontendEnvironmentVariable()),
             backend: this.getEnvironmentVariable(new BackendEnvironmentVariable()),
-        };
+        });
     }
 
     private getEnvironmentType(): EnvironmentType {
@@ -79,4 +79,4 @@ class Environment {
     }
 }
 
-export const environment = new Environment();
+export const environment = Object.freeze(new Environment());
