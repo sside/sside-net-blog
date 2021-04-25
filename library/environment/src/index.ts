@@ -1,12 +1,12 @@
 import { config } from "dotenv";
 import { resolve } from "path";
 
-const EnvironmentType = {
+export const EnvironmentType = {
     Production: "production",
     Development: "development",
     Test: "test",
 } as const;
-type EnvironmentType = typeof EnvironmentType[keyof typeof EnvironmentType];
+export type EnvironmentType = typeof EnvironmentType[keyof typeof EnvironmentType];
 
 abstract class EnvironmentVariableBase {
     [key: string]: string;
