@@ -47,10 +47,15 @@ class Environment {
                 debug: true,
             });
         }
-        this.variables = Object.freeze({
+
+        const environmentVariables = {
             frontend: this.getEnvironmentVariable(new FrontendEnvironmentVariable()),
             backend: this.getEnvironmentVariable(new BackendEnvironmentVariable()),
-        });
+        };
+        for (const container of Object.values(environmentVariables)) {
+            Object.freeze(container);
+        }
+        this.variables = Object.freeze(environmentVariables);
     }
 
     private getEnvironmentType(): EnvironmentType {
