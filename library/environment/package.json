@@ -1,8 +1,9 @@
 {
     "name": "@sside-net-blog/environment",
     "scripts": {
-        "build": "rimraf dist && tsc --build",
-        "watch": "tsc --watch",
+        "clean": "rimraf dist",
+        "build": "yarn clean && tsc --build",
+        "watch": "yarn clean && tsc --watch",
         "test": "jest"
     },
     "dependencies": {
@@ -18,7 +19,9 @@
     "version": "0.0.0",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "files": ["./dist"],
+    "files": [
+        "./dist"
+    ],
     "license": "MIT",
     "private": true
 }
