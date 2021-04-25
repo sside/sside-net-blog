@@ -1,5 +1,5 @@
 {
-    "packages": ["app/*", "library/*", "resource"],
+    "packages": ["app/*", "library/*", "resource/*"],
     "version": "0.0.0",
     "npmClient": "yarn",
     "command": {
