@@ -16,7 +16,7 @@
         "build:app:frontend": "yarn frontend build",
         "build:app:backend": "yarn backend build",
         "build:library": "run-p build:library:*",
-        "build:library:environment": "yarn environment watch",
+        "build:library:environment": "yarn environment build",
         "build:resource": "run-s build:resource:constant build:resource:configuration",
         "build:resource:configuration": "yarn configuration build",
         "build:resource:constant": "yarn constant build",
