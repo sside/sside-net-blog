@@ -50,10 +50,10 @@ model ContentHistory {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  title       String    @db.Text
-  body        String    @db.Text
-  isPublished Boolean   @default(false)
-  publishedAt DateTime?
+  title        String    @db.Text
+  bodyMarkdown String    @db.Text
+  isPublished  Boolean   @default(false)
+  publishedAt  DateTime?
 
   Content   Content @relation(fields: [contentId], references: [id])
   contentId String  @db.Char(36)
@@ -66,7 +66,7 @@ model MetaTag {
 
   name String @unique @db.VarChar(255)
 
-  blogArticles Content[]
+  contents Content[]
 }
 
 generator client {
