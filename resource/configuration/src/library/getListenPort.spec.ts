@@ -1,5 +1,5 @@
-import {Configuration} from "../Configuration";
-import {getListenPort} from "./getListenPort";
+import { Configuration } from "../Configuration";
+import { getListenPort } from "./getListenPort";
 
 describe("getListenPort", () => {
     test("Can get fallback value", () => {

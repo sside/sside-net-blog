@@ -1,4 +1,4 @@
-import {Configuration} from "../Configuration";
+import { Configuration } from "../Configuration";
 
 export const getListenPort = (frontendFallback: number, backendFallback: number): Configuration["port"] => {
     const environmentVariables = process.env;

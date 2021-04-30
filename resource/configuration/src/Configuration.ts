@@ -1,6 +1,6 @@
-export interface Configuration{
-    port:{
-        frontend:number
-        backend:number
-    }
+export interface Configuration {
+    port: {
+        frontend: number;
+        backend: number;
+    };
 }
