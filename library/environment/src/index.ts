@@ -28,19 +28,13 @@ class Environment {
     };
 
     constructor() {
-        if (!process.env) {
-            throw new Error(`Cannot get environment variables.`);
-        }
-
         this.type = this.getEnvironmentType();
         this.isProduction = this.type === EnvironmentType.Production;
 
-        if (!this.isProduction) {
-            config({
-                path: resolve(__dirname, "../../../", ".env"),
-                debug: true,
-            });
-        }
+        config({
+            path: resolve(__dirname, "../../../", ".env"),
+            debug: !this.isProduction,
+        });
 
         const environmentVariables = {
             frontend: this.getEnvironmentVariable(new FrontendEnvironmentVariable()),
