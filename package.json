@@ -44,8 +44,8 @@
         "frontend": "cd app/frontend && yarn",
         "backend": "cd app/backend && yarn",
         "environment": "cd library/environment && yarn",
-        "configuration": "cd library/configuration && yarn",
-        "constant": "cd library/constant && yarn",
+        "configuration": "cd resource/configuration && yarn",
+        "constant": "cd resource/constant && yarn",
         "postinstall": "lerna bootstrap",
         "prepare": "husky install"
     },

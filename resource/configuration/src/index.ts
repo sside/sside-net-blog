@@ -1,11 +1,11 @@
+import { EnvironmentType } from "@sside-net-blog/constant";
 import { Configuration } from "./Configuration";
 import { development } from "./development";
 import { production } from "./production";
 import { test } from "./test";
 
-export const getConfiguration = (): Configuration => {
-    const nodeEnv = process.env.NODE_ENV;
-    switch (nodeEnv) {
+export const getConfiguration = (environmentType: EnvironmentType): Configuration => {
+    switch (environmentType) {
         case "production":
             return production;
         case "development":
@@ -13,6 +13,6 @@ export const getConfiguration = (): Configuration => {
         case "test":
             return test;
         default:
-            throw new Error(`Unexpected NODE_ENV. Value: ${nodeEnv}`);
+            throw new Error(`Unexpected NODE_ENV. Value: ${environmentType}`);
     }
 };
