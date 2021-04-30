@@ -59,6 +59,9 @@ class Environment {
         if (!environmentType) {
             throw new Error(`Invalid NODE_ENV. value: ${nodeEnv}`);
         }
+
+        this.logger(`Environment type: ${environmentType}`, "log");
+
         return environmentType;
     }
 
@@ -71,10 +74,26 @@ class Environment {
                 // @ts-ignore
                 container[key] = environmentVariable;
             } else {
-                console.warn(`Required environment variable ${key} is not defined.`);
+                this.logger(`Required environment variable ${key} is not defined.`, "warn");
             }
         }
         return container;
+    }
+
+    private logger(message: string, type: "log" | "warn" | "error"): void {
+        const formattedMessage = `[Environment] ${type}: ${message}`;
+        switch (type) {
+            case "error":
+                console.error(formattedMessage);
+                break;
+            case "warn":
+                console.warn(formattedMessage);
+                break;
+            case "log":
+            default:
+                console.log(formattedMessage);
+                break;
+        }
     }
 }
 
