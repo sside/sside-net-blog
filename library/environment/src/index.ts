@@ -28,13 +28,12 @@ class Environment {
     };
 
     constructor() {
-        this.type = this.getEnvironmentType();
-        this.isProduction = this.type === EnvironmentType.Production;
-
         config({
             path: resolve(__dirname, "../../../", ".env"),
-            debug: !this.isProduction,
         });
+
+        this.type = this.getEnvironmentType();
+        this.isProduction = this.type === EnvironmentType.Production;
 
         const environmentVariables = {
             frontend: this.getEnvironmentVariable(new FrontendEnvironmentVariable()),
