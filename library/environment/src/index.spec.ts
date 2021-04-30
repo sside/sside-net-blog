@@ -2,7 +2,8 @@ process.env.NODE_ENV = "test";
 const DATABASE_URL = "test";
 process.env.DATABASE_URL = DATABASE_URL;
 
-import { environment, EnvironmentType } from "./index";
+import { EnvironmentType } from "@sside-net-blog/constant";
+import { environment } from "./index";
 
 describe(`environment package`, () => {
     describe(`environment variable`, () => {

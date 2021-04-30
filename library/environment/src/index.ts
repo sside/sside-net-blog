@@ -1,12 +1,6 @@
+import { EnvironmentType } from "@sside-net-blog/constant";
 import { config } from "dotenv";
 import { resolve } from "path";
-
-export const EnvironmentType = {
-    Production: "production",
-    Development: "development",
-    Test: "test",
-} as const;
-export type EnvironmentType = typeof EnvironmentType[keyof typeof EnvironmentType];
 
 abstract class EnvironmentVariableBase {
     [key: string]: string;
