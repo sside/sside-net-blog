@@ -9,6 +9,17 @@ describe("date-time package", () => {
         test("Can parse ISO 8601 date time", () => {
             expect(fromIsoDateTimeToJst(BEGINNING_OF_2021_ISO_DATE_TIME).getTime()).toBe(BEGINNING_OF_2021_EPOCH_MILLI);
         });
+        test("Throws error when input invalid ISO8601 format ", () => {
+            expect(() => {
+                fromIsoDateTimeToJst("2021-01-01T12:00:0009:00");
+            }).toThrowError();
+        });
+        test("Throws error when input undefined", () => {
+            expect(() => {
+                // @ts-ignore
+                fromIsoDateTimeToJst(undefined);
+            }).toThrowError();
+        });
     });
 
     describe("manipulate", () => {

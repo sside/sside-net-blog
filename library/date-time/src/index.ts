@@ -8,7 +8,11 @@ const parseDateToJst = (date: Date): DateTime => {
 };
 
 const parseIsoDateTimeToJst = (isoDateTime: string): DateTime => {
-    return DateTime.fromISO(isoDateTime, { zone: TimeZone.JST });
+    const dateTime = DateTime.fromISO(isoDateTime, { zone: TimeZone.JST });
+    if (!dateTime.isValid) {
+        throw new Error(`Input date time must be ISO8601 format. value: ${isoDateTime}`);
+    }
+    return dateTime;
 };
 
 // comparer
