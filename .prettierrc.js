@@ -22,5 +22,11 @@ module.exports = {
                 parser: "json",
             },
         },
+        {
+            files: ["*.gql, *.graphql"],
+            options: {
+                proseWrap: "never",
+            },
+        },
     ],
 };

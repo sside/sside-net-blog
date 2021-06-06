@@ -1,10 +1,16 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from "@nestjs/common";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
+import { environment } from "@sside-net-blog/environment";
+
+const productionLogLevel: Prisma.LogLevel[] = ["info", `warn`, "error"];
+const developmentLogLevel: Prisma.LogLevel[] = [...productionLogLevel, "query"];
 
 @Injectable()
 export class DatabaseService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
     constructor() {
-        super();
+        super({
+            log: environment.isProduction ? productionLogLevel : developmentLogLevel,
+        });
     }
 
     async onModuleDestroy(): Promise<void> {
